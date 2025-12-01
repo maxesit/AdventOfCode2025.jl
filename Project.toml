@@ -1,2 +1,7 @@
+name = "AdventOfCode2025"
+uuid = "a11ae0f3-b861-498b-bbbc-652ec804f3af"
+authors = ["Marko Polic <mpolic2000@gmail.com>"]
+version = "0.0.1"
+
 [deps]
 Printf = "de0858da-6303-5e67-8744-51eddeeeb8d7"

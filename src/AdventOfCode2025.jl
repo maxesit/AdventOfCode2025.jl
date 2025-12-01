@@ -2,7 +2,7 @@ module AdventOfCode2025
 
 using Printf
 
-
+include(joinpath(@__DIR__,"Day01","task1.jl"))
 
 function readInput(path::String)
     s = open(path, "r") do file

@@ -39,8 +39,6 @@ countIDs(v::Vector{Int64}) = countIDs(v[1],v[2])
 function countIDs(RangeL,RangeR)
    counter = 0
    for i in firstHalfLeft(RangeL):firstHalfRight(RangeR)
-       # temp = parse(Int,(string(i)*string(i)))
-	   # i = 1234, temp  = 1234 * 10^4 + 1234
 	   temp = Int(i*10^(trunc(log10(i))+1)+i)
 	   counter += temp in RangeL:RangeR ? temp : 0
    end
@@ -59,11 +57,9 @@ function countIDs2(RangeL,RangeR)
 				flag = true
 			    for i in 1:len
           	    	flag *= all(isequal(first(nstr[i:len:end])),nstr[i:len:end])
-		        	#println("num: ",nstr,":",nstr[i:len:end],"; ",flag)
 				end
 			end
 			if flag==true
-				#println("num: ",nstr,"| with len: ",len)
 				break
 			end
 		end
@@ -74,34 +70,5 @@ function countIDs2(RangeL,RangeR)
 	counter 
 end
 
-
-
-#=	Idea for part 2:
-
-1. loop from boundary to another
-
-2. Check each number for repetition
-
-=#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
+

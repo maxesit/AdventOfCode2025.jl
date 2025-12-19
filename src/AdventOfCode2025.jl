@@ -2,10 +2,10 @@ module AdventOfCode2025
 
 using Printf
 
-include(joinpath(@__DIR__,"day01.jl"))
-include(joinpath(@__DIR__,"day02.jl"))
-include(joinpath(@__DIR__,"day09.jl"))
-include(joinpath(@__DIR__,"day03.jl"))
+solved_days = [1,2,3,9]
+for day in solved_days
+	include(joinpath(@__DIR__,"day"*lpad(string(day),2,"0")*".jl"))
+end
 
 function readInput(path::String)
     s = open(path, "r") do file

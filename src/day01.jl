@@ -6,7 +6,7 @@ using AdventOfCode2025
 function day01(input::String=readInput(joinpath(@__DIR__,"..","data","Day01","data-task1.txt")))
     task1 = calcPassword(decrypt(transformDirections(input))[1])
     _, task2 = clearPath(transformDirections(input))
-    [task1 task2]
+    [task1,task2]
 end
 
 # maps string -> array of directions

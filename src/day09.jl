@@ -4,7 +4,8 @@ using AdventOfCode2025
 
 function day09(input::String=readInput(joinpath(@__DIR__,"..","data","Day09","data-task1.txt")))
 	task1 = findMax(inputData(input))
-	[task1]
+	task2 = -1 # not Implemented yet
+	[task1, task2]
 end
 
 function inputData(s::String)

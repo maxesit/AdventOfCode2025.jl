@@ -36,27 +36,24 @@ function sortFreshList(fresh_list)
 	out = out[perms]
 	for i in 2:size(out,1)
 		if (out[i][1] == out[i-1][1])&&(out[i][end] < out[i-1][end])
-			out[i], out[i-1] = out[i-1], out[i]
+			out[i] = out[i-1]
 		end
 	end
-	out
+	return(unique(out))
 end
 
 function countTotalFresh(fresh_list)
-	counter = 0
 	sorted_list = sortFreshList(fresh_list)
 	unsorted = true # looks for 1 clean run
 	while unsorted
-	unsorted = false
-	for i in 2:size(sorted_list,1)
-		if size(intersect(sorted_list[i],sorted_list[i-1]),1)!=0
-			sorted_list[i] = sorted_list[i-1][1]:sorted_list[i][end]
-			sorted_list[i-1] = sorted_list[i]
-			unsorted = true
-			counter+=1
-			println(counter)
+		unsorted = false
+		for i in 2:size(sorted_list,1)
+			if size(intersect(sorted_list[i],sorted_list[i-1]),1)!=0
+				sorted_list[i] = sorted_list[i-1][1]:sorted_list[i][end]
+				sorted_list[i-1] = sorted_list[i]
+				unsorted = true
+			end
 		end
-	end
 	sorted_list=unique(sorted_list)
 	end
 	return([sum(size.(sorted_list,1)),sorted_list])

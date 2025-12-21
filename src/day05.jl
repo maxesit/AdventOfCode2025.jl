@@ -49,8 +49,12 @@ function countTotalFresh(fresh_list)
 		unsorted = false
 		for i in 2:size(sorted_list,1)
 			if size(intersect(sorted_list[i],sorted_list[i-1]),1)!=0
-				sorted_list[i] = sorted_list[i-1][1]:sorted_list[i][end]
-				sorted_list[i-1] = sorted_list[i]
+				if sorted_list[i][end] > sorted_list[i-1][end]
+					sorted_list[i] = sorted_list[i-1][1]:sorted_list[i][end]
+					sorted_list[i-1] = sorted_list[i]
+				else
+					sorted_list[i] = sorted_list[i-1]
+				end
 				unsorted = true
 			end
 		end

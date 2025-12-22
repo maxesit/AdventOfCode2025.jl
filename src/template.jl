@@ -8,4 +8,10 @@ function day##(input::String=readInput(joinpath(@__DIR__,"..","data","Day##","da
 	[task1,task2]
 end
 
+function transformInput(s)
+	out = []
+
+	out
+end
+
 end

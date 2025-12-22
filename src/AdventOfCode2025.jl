@@ -2,7 +2,7 @@ module AdventOfCode2025
 
 using Printf
 
-solved_days = [1,2,3,4,5,6,9]
+solved_days = [1,2,3,4,5,6,7,9]
 for day in solved_days
 	include(joinpath(@__DIR__,"day"*lpad(string(day),2,"0")*".jl"))
 end
